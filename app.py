@@ -7,15 +7,6 @@ from sql_agent import generate_sql
 from db_utils import run_query
 
 
-# --- 디버그용: 현재 DB_URL 확인 ---
-from config import DB_URL
-
-st.sidebar.markdown("### 🧩 Debug Info")
-with st.sidebar.expander("DB 연결 정보 확인", expanded=False):
-    st.code(DB_URL, language="bash")
-
-
-
 # 페이지 기본 설정
 st.set_page_config(page_title="Time Log 분석 플랫폼", layout="wide")
 
