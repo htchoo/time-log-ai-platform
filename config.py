@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -11,4 +12,4 @@ PG_CONFIG = {
     "password": os.getenv("PG_PASSWORD"),
 }
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
