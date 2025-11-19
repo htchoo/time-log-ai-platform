@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-PG_CONFIG = {
-    "host": os.getenv("PG_HOST"),
-    "port": os.getenv("PG_PORT"),
-    "dbname": os.getenv("PG_DATABASE"),
-    "user": os.getenv("PG_USER"),
-    "password": os.getenv("PG_PASSWORD"),
-}
-
 OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+
+PG_HOST = os.getenv("PG_HOST", "localhost")
+PG_PORT = os.getenv("PG_PORT", "5432")
+PG_DATABASE = os.getenv("PG_DATABASE", "postgres")
+PG_USER = os.getenv("PG_USER", "postgres")
+PG_PASSWORD = os.getenv("PG_PASSWORD", "")
+
+DB_URL = f"postgresql://{PG_USER}:{PG_PASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DATABASE}"
