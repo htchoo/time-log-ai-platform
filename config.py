@@ -21,7 +21,4 @@ PG_SSLMODE = st.secrets.get("PG_SSLMODE", os.getenv("PG_SSLMODE", "require"))
 PG_PASSWORD_ENC = urllib.parse.quote_plus(PG_PASSWORD or "")
 
 # 4️⃣ 최종 연결 URL
-DB_URL = (
-    f"postgresql://{PG_USER}:{PG_PASSWORD_ENC}@{PG_HOST}:{PG_PORT}/{PG_DATABASE}"
-    f"?sslmode={PG_SSLMODE}"
-)
+DB_URL = f"postgresql://{PG_USER}:{PG_PASSWORD_ENC}@{PG_HOST}:{PG_PORT}/{PG_DATABASE}?sslmode=require"
