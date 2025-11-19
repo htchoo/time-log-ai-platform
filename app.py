@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from sql_agent import generate_sql
 from db_utils import run_query
 
+run_query("SELECT NOW();")  # Neon DB 깨우기
 
 # 페이지 기본 설정
 st.set_page_config(page_title="Time Log 분석 플랫폼", layout="wide")
