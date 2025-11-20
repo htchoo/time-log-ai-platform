@@ -51,3 +51,7 @@ def run_query(sql: str, retries: int = 3, delay: int = 3) -> pd.DataFrame:
             else:
                 print("❌ 모든 재시도 실패 — 빈 DataFrame 반환")
                 return pd.DataFrame()
+
+print(f"🔍 DB_URL Used: {DB_URL}")
+print(f"🔍 Running on Streamlit Cloud: {os.getenv('STREAMLIT_RUNTIME', 'local')}")
+print(f"🔍 Testing connection with SELECT NOW()...")
